@@ -1,0 +1,24 @@
+{% extends 'layout.html'%}
+{% block content %}
+<div class = "content-section">
+
+		<div class="container">
+               <h3>Weather Report</h3>
+        </div>
+
+    <!-- Form -->
+        <div class="form">
+			<form action="/results" method="POST">
+                  <label for="Name of City">Enter Name of City</label>
+                  <input type="text" placeholder="Name of City"  name="Name of City"/>
+                  <br />
+                  <label for="State ID">Enter State ID in Caps</label>
+                  <input type="text" placeholder="State ID" name="State ID"/>
+                  <br />
+                  <input type="submit" value="Submit">
+              <br />
+
+            </form>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,62 @@
+{% block content %}
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" type = "text/css" href = "{{url_for('static', filename = 'css/main.css')}}">
+		<title>Weather Report</title>
+
+</head>
+<body>
+	<header class="site-header">
+
+	  <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+	    <div class="container">
+	      <a class="navbar-brand mr-4" href="/">Weather Report </a>
+			<a class="navbar-brand mr-4" href="/">Go back to Search Weather Report</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="navbar-toggler-icon"></span>
+	      </button>
+
+	    </div>
+	  </nav>
+	</header>
+
+</body>
+<div class = "content-section">
+	<form method = "POST" action ="/result">
+
+	<body>
+
+ <article class="media content-section">
+	  <div class="media-body">
+      <table cellspacing="0">
+
+      <tr>
+         <th width="50">Day</th>
+         <th width="50">Weather</th>
+         <th width="50">Temperature</th>
+		  <th width="50">Date</th>
+
+      </tr>
+        {% for result in results %}
+        <tr>
+              <td>{{result['Day']}}</td>
+              <td>{{result['Weather']}}</td>
+		      <td>{{result['Temperature']}}</td>
+			  <td>{{result['Date']}}</td>
+
+		</tr>
+        {% endfor %}
+   </table>
+</div>
+
+
+
+</body>
+
+
+{% endblock content %}
